@@ -1,0 +1,7 @@
+var result = from s in Students
+             join f in Friends on s.ID equals f.ID
+             join p1 in Packages on s.ID equals p1.ID
+             join p2 in Packages on f.Friend_ID equals p2.ID
+             where p2.Salary > p1.Salary
+             orderby p2.Salary
+             select s.Name;
